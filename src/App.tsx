@@ -1,11 +1,48 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import Library from "./pages/Library";
+import Discover from "./pages/Discover";
+import Achievements from "./pages/Achievements";
+import Friends from "./pages/Friends";
 
 function App() {
   return (
-    <Layout>
-      <h2 className="text-2xl font-semibold mb-4">Welcome to Reado</h2>
-      <p>Start building your reading journey!</p>
-    </Layout>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Library />
+            </Layout>
+          }
+        />
+        <Route
+          path="/discover"
+          element={
+            <Layout>
+              <Discover />
+            </Layout>
+          }
+        />
+        <Route
+          path="/achievements"
+          element={
+            <Layout>
+              <Achievements />
+            </Layout>
+          }
+        />
+        <Route
+          path="/friends"
+          element={
+            <Layout>
+              <Friends />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
