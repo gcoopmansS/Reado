@@ -40,7 +40,8 @@ export default function Library() {
       />
 
       <BookDetailModal
-        book={selectedBook as any}
+        book={selectedBook}
+        isOpen={!!selectedBook}
         onClose={() => setSelectedBook(null)}
       />
 
@@ -48,7 +49,7 @@ export default function Library() {
       <div className="fixed bottom-4 right-4 space-x-2 bg-white/80 p-2 rounded-xl shadow">
         <button
           onClick={() =>
-            selectedBook && changeStatus((selectedBook as any).id, "reading")
+            selectedBook && changeStatus(selectedBook.id, "reading")
           }
           className="px-3 py-1 rounded bg-amber-600 text-white text-sm disabled:opacity-50"
           disabled={!selectedBook}
@@ -57,7 +58,7 @@ export default function Library() {
         </button>
         <button
           onClick={() =>
-            selectedBook && changeStatus((selectedBook as any).id, "finished")
+            selectedBook && changeStatus(selectedBook.id, "finished")
           }
           className="px-3 py-1 rounded bg-emerald-600 text-white text-sm disabled:opacity-50"
           disabled={!selectedBook}

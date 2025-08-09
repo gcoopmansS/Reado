@@ -1,5 +1,9 @@
 // src/components/BookSpine.tsx
-type Book = { id: string; title: string; coverUrl: string };
+type Book = {
+  id: string;
+  title: string;
+  coverUrl: string;
+};
 
 export default function BookSpine({
   book,

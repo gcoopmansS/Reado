@@ -10,7 +10,7 @@ type Book = {
 type Props = {
   title: string;
   books: Book[];
-  onBookClick?: (book: Book) => void; // you had this ✅
+  onBookClick?: (book: Book) => void;
 };
 
 export default function LibraryShelf({ title, books, onBookClick }: Props) {
