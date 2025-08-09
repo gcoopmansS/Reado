@@ -5,9 +5,21 @@ type Book = {
   coverUrl: string;
 };
 
-export default function BookSpine({ book }: { book: Book }) {
+export default function BookSpine({
+  book,
+  onClick,
+}: {
+  book: Book;
+  onClick?: () => void;
+}) {
   return (
-    <div className="w-[64px] h-[100px] relative group">
+    <div
+      onClick={onClick}
+      className="w-[64px] h-[100px] relative group cursor-pointer"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onClick?.()}
+    >
       <img
         src={book.coverUrl}
         alt={book.title}
